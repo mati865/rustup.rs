@@ -1,11 +1,10 @@
-FROM alpine:3.9
+FROM ubuntu:18.04
 
-RUN apk update && \
-  apk add \
+RUN apt-get update && apt-get install -y \
+  musl-dev \
+  musl-tools \
   curl \
   ca-certificates \
   perl \
   make \
   gcc
-
-ENV CC_x86_64_unknown_linux_musl=gcc
